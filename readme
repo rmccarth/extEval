@@ -1,0 +1,8 @@
+Using OpenWPM Framework in Ubuntu 16.04, place the following files in their corresponding locations:
+
+browser_commands.py -> /home/privacy/Desktop/OpenWPM-master/automation/Commands
+
+default_browser_params.json -> /home/privacy/Desktop/OpenWPM-master/automation
+
+demo.py, urls.py, urls.csv -> /home/privacy/Desktop/OpenWPM-master/
+
