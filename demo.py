@@ -32,17 +32,17 @@ manager = TaskManager.TaskManager(manager_params, browser_params)
 
 # Visits the sites with all browsers simultaneously
 for site in sites:
-    command_sequence = CommandSequence.CommandSequence(site)
+    command_sequence = CommandSequence.CommandSequence(site, reset=True)
 
     # Start by visiting the page
-    command_sequence.get(sleep=0, timeout=60)
+    command_sequence.get(sleep=30, timeout=60)
 
     # dump_profile_cookies/dump_flash_cookies closes the current tab.
     command_sequence.dump_profile_cookies(120)
     command_sequence.dump_profile	#Used to dump JS cookies to SQLiteDB. Still need to get browser extensions enabled. 
 
     # index='**' synchronizes visits between the three browsers
-    manager.execute_command_sequence(command_sequence, index='**')
+    manager.execute_command_sequence(command_sequence)
 
 # Shuts down the browsers and waits for the data to finish logging
 manager.close()
